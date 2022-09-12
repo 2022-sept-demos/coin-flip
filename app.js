@@ -3,13 +3,14 @@ import { getRandomItem } from './utils.js';
 
 /* State */
 let gameState = 'guess'; // 'guess' or 'results'
-let guess = 'heads';
-let flip = 'heads';
-let result = 'win'; // 'win' or 'lose'
+let guess = ''; // 'heads' or 'tails'
+let flip = ''; // 'heads' or 'tails'
+let result = ''; // 'win' or 'lose'
 
 let flips = 0;
 let wins = 0;
 
+// probability array
 const sides = ['heads', 'tails'];
 
 /* Actions */
@@ -32,17 +33,12 @@ function flipCoin(userGuess) {
         result = 'lose';
     }
 
-    displayGuess();
-    displayResults();
-    displayScoreboard();
+    loadPage();
 }
 
 function playAgain() {
     gameState = 'guess';
-
-    displayGuess();
-    displayResults();
-    displayScoreboard();
+    loadPage();
 }
 
 /* Components */
