@@ -1,0 +1,29 @@
+.name-tag {
+    background: rgb(234, 65, 65);
+    color: white;
+
+    width: 350px;
+    display: grid;
+    grid-template-rows: 70px 30px 60px 30px;
+    align-items: center;
+    justify-items: center;
+}
+
+.name-tag strong {
+    text-transform: uppercase;
+    font-size: 4em;
+}
+
+#name-display {
+    align-self: stretch;
+    justify-self: stretch;
+
+    background: white;
+    color: black;
+    font-family: cursive;
+    font-size: 1.1em;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
