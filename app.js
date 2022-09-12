@@ -1,4 +1,5 @@
 /* Imports */
+import { getRandomItem } from './utils.js';
 
 /* State */
 let gameState = 'guess'; // 'guess' or 'results'
@@ -6,8 +7,25 @@ let guess = 'heads';
 let flip = 'heads';
 let result = 'win'; // 'win' or 'lose'
 
+const sides = ['heads', 'tails'];
+
 /* Actions */
 function loadPage() {
+    displayGuess();
+    displayResults();
+}
+
+function flipCoin(userGuess) {
+    gameState = 'results';
+    guess = userGuess;
+    flip = getRandomItem(sides);
+
+    if (guess === flip) {
+        result = 'win';
+    } else {
+        result = 'lose';
+    }
+
     displayGuess();
     displayResults();
 }
@@ -45,15 +63,28 @@ function displayGuess() {
         }
     }
 }
+
 // event listeners
+guessHeads.addEventListener('click', () => {
+    flipCoin('heads');
+});
+guessTails.addEventListener('click', () => {
+    flipCoin('tails');
+});
 
 /* Results */
 const flipImage = document.getElementById('flip-image');
 const flipDisplay = document.getElementById('flip-display');
+const resultsSection = document.getElementById('results-section');
 
 function displayResults() {
-    flipImage.src = 'assets/coin-' + flip + '.png';
-    flipDisplay.textContent = flip;
+    if (gameState === 'results') {
+        resultsSection.classList.remove('hidden');
+        flipImage.src = 'assets/coin-' + flip + '.png';
+        flipDisplay.textContent = flip;
+    } else {
+        resultsSection.classList.add('hidden');
+    }
 }
 
 /* Run page load code */

@@ -48,6 +48,10 @@ main {
     opacity: 0;
 }
 
+.hidden {
+    display: none !important;
+}
+
 .coin-guess img {
     height: 100%;
 }
