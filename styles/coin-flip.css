@@ -1,0 +1,49 @@
+main {
+    text-align: center;
+}
+
+.logo {
+    height: 45px;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.scoreboard span {
+    font-weight: bold;
+}
+
+.coin-guess {
+    height: 60px;
+    width: 125px;
+    padding: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    /* TODO: CSS transition for background */
+}
+
+.coin-guess.win {
+    background: rgb(129, 183, 129);
+}
+
+.coin-guess.lose {
+    background: rgb(241, 143, 143);
+}
+
+.coin-guess img {
+    height: 100%;
+}
+
+#flip-image {
+    height: 150px;
+}
+
+#flip-display {
+    font-size: 1.2em;
+    font-weight: bold;
+}

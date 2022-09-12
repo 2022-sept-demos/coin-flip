@@ -23,17 +23,46 @@
     <!-- css -->
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/global.css" />
-    <link rel="stylesheet" href="styles/name-tag.css" />
+    <link rel="stylesheet" href="styles/coin-flip.css" />
 </head>
 
 <body>
     <header>
-        <img src="assets/html_css_js.png">
+        <img class="logo" src="assets/spinning-coin.gif">
         <h1>Coin Flip</h1>
     </header>
 
     <main>
+        <section>
+            <h2>Scoreboard</h2>
+            <p class="scoreboard">
+                flips:
+                <span id="flips-display">3</span>
+                wins:
+                <span id="wins-display">2</span>
+                losses:
+                <span id="losses-display">1</span>
+            </p>
+        </section>
 
+        <section>
+            <h2>Call It!</h2>
+            <button class="coin-guess" id="guess-heads">
+                <img src="assets/coin-heads.png" alt="heads image">
+                Heads
+            </button>
+            <button class="coin-guess" id="guess-tails">
+                <img src="assets/coin-tails.png" alt="tails image">
+                Tails
+            </button>
+        </section>
+
+        <section id="results-section">
+            <h2>The Flip...</h2>
+            <img id="flip-image" src="assets/coin-heads.png" alt="heads image">
+            <p id="flip-display">Heads</p>
+            <button id="play-again-button">Play Again</button>
+        </section>
     </main>
 
 </body>
