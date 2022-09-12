@@ -7,8 +7,8 @@ let guess = 'heads';
 let flip = 'heads';
 let result = 'win'; // 'win' or 'lose'
 
-let flips = 5;
-let wins = 5;
+let flips = 0;
+let wins = 0;
 
 const sides = ['heads', 'tails'];
 
@@ -31,6 +31,14 @@ function flipCoin(userGuess) {
     } else {
         result = 'lose';
     }
+
+    displayGuess();
+    displayResults();
+    displayScoreboard();
+}
+
+function playAgain() {
+    gameState = 'guess';
 
     displayGuess();
     displayResults();
@@ -94,6 +102,7 @@ guessTails.addEventListener('click', () => {
 const flipImage = document.getElementById('flip-image');
 const flipDisplay = document.getElementById('flip-display');
 const resultsSection = document.getElementById('results-section');
+const playAgainButton = document.getElementById('play-again-button');
 
 function displayResults() {
     if (gameState === 'results') {
@@ -104,6 +113,10 @@ function displayResults() {
         resultsSection.classList.add('hidden');
     }
 }
+
+playAgainButton.addEventListener('click', () => {
+    playAgain();
+});
 
 /* Run page load code */
 loadPage();
