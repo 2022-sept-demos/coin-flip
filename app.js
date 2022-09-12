@@ -23,9 +23,11 @@ function flipCoin(userGuess) {
     gameState = 'results';
     guess = userGuess;
     flip = getRandomItem(sides);
+    flips++;
 
     if (guess === flip) {
         result = 'win';
+        wins++;
     } else {
         result = 'lose';
     }
