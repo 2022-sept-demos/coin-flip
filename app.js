@@ -7,12 +7,16 @@ let guess = 'heads';
 let flip = 'heads';
 let result = 'win'; // 'win' or 'lose'
 
+let flips = 5;
+let wins = 5;
+
 const sides = ['heads', 'tails'];
 
 /* Actions */
 function loadPage() {
     displayGuess();
     displayResults();
+    displayScoreboard();
 }
 
 function flipCoin(userGuess) {
@@ -28,9 +32,21 @@ function flipCoin(userGuess) {
 
     displayGuess();
     displayResults();
+    displayScoreboard();
 }
 
 /* Components */
+
+/* Scoreboard */
+const flipsDisplay = document.getElementById('flips-display');
+const winsDisplay = document.getElementById('wins-display');
+const lossesDisplay = document.getElementById('losses-display');
+
+function displayScoreboard() {
+    flipsDisplay.textContent = flips;
+    winsDisplay.textContent = wins;
+    lossesDisplay.textContent = flips - wins;
+}
 
 /* Guess */
 // get DOM
