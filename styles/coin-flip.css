@@ -35,6 +35,10 @@ main {
     background: rgb(241, 143, 143);
 }
 
+.fade-out {
+    opacity: 0;
+}
+
 .coin-guess img {
     height: 100%;
 }
