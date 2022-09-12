@@ -1,14 +1,15 @@
 /* Imports */
 
 /* State */
-let gameState = 'results'; // 'guess' or 'results'
+let gameState = 'guess'; // 'guess' or 'results'
 let guess = 'heads';
-let flip = 'tails';
+let flip = 'heads';
 let result = 'win'; // 'win' or 'lose'
 
 /* Actions */
 function loadPage() {
     displayGuess();
+    displayResults();
 }
 
 /* Components */
@@ -45,6 +46,15 @@ function displayGuess() {
     }
 }
 // event listeners
+
+/* Results */
+const flipImage = document.getElementById('flip-image');
+const flipDisplay = document.getElementById('flip-display');
+
+function displayResults() {
+    flipImage.src = 'assets/coin-' + flip + '.png';
+    flipDisplay.textContent = flip;
+}
 
 /* Run page load code */
 loadPage();
